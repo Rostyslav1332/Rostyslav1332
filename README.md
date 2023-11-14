@@ -1,10 +1,19 @@
-- 👋 Hi, I’m @Rostyslav1332
-- 👀 I’m interested in Python
-- 🌱 I’m currently learning Python
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+import pickle
 
-<!---
-Rostyslav1332/Rostyslav1332 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+name_file = "user.dat"
+order1 = [
+    {1: 'choclate'},
+    {2: 'bread'},
+    {3: "milk"},
+]
+order2 = [
+    {1:'hamburger'},
+    {2: 'sweet'},
+    {3:"water"},
+]
+with open(name_file, "wb") as file:
+    pickle.dump(order1, file)
+    pickle.dump(order2, file)
+
+with open(name_file, "rb") as file:
+    orders_file = pickle.load(file)
